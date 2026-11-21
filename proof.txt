@@ -1,0 +1,74 @@
+### git worktree list
+/home/claude/miri            7b66132 [main]
+/home/claude/m-early-access  633e196 [feature/early-access]
+/home/claude/m-hotfix        c20c0ba [hotfix/price]
+/home/claude/m-review        fe1989c [review/noa-refund]
+/home/claude/m-security      46594cc [security/untrack-api-key]
+/home/claude/m-waitlist      2eaab2b [feature/waitlist]
+
+### git branch -a -vv
++ feature/early-access                               633e196 (/home/claude/m-early-access) feat(pricing): raise club member ticket cap from 4 to 6 per order
++ feature/waitlist                                   2eaab2b (/home/claude/m-waitlist) test(waitlist): cover validation, normalisation, duplicates and immutability
++ hotfix/price                                       c20c0ba (/home/claude/m-hotfix) Revert "perf: faster price formatting"
+* main                                               7b66132 [origin/main: ahead 15] merge: release waitlist sign-up into main
++ review/noa-refund                                  fe1989c (/home/claude/m-review) [origin/noa/refund: ahead 1] review: noa/refund is not ready to merge - refund formula includes the service fee
++ security/untrack-api-key                           46594cc (/home/claude/m-security) security: stop tracking js/config.js which held the payment API key
+  remotes/origin/HEAD                                -> origin/main
+  remotes/origin/dana/promo                          d4b1e35 test: add student discount tests
+  remotes/origin/main                                6e5b25d feat: friendlier message for empty quantity
+  remotes/origin/miri-jaffe/feature/early-access     633e196 feat(pricing): raise club member ticket cap from 4 to 6 per order
+  remotes/origin/miri-jaffe/feature/waitlist         2eaab2b test(waitlist): cover validation, normalisation, duplicates and immutability
+  remotes/origin/miri-jaffe/hotfix/price             c20c0ba Revert "perf: faster price formatting"
+  remotes/origin/miri-jaffe/main                     7b66132 merge: release waitlist sign-up into main
+  remotes/origin/miri-jaffe/review/noa-refund        fe1989c review: noa/refund is not ready to merge - refund formula includes the service fee
+  remotes/origin/miri-jaffe/security/untrack-api-key 46594cc security: stop tracking js/config.js which held the payment API key
+  remotes/origin/noa/refund                          f7e8785 test: refund tests
+  remotes/origin/ruth/fixes                          fee9f58 wip: try new fonts
+
+### git log --graph --oneline --all -n 80
+*   7b66132 (HEAD -> main, tag: v1.1, origin/miri-jaffe/main) merge: release waitlist sign-up into main
+|\  
+| * 2eaab2b (origin/miri-jaffe/feature/waitlist, feature/waitlist) test(waitlist): cover validation, normalisation, duplicates and immutability
+| * cbf00a7 feat(waitlist): add joinWaitlist for sold-out sign-ups
+* |   5794213 merge: release early access with student promo into main
+|\ \  
+| * | 633e196 (origin/miri-jaffe/feature/early-access, feature/early-access) feat(pricing): raise club member ticket cap from 4 to 6 per order
+| * | 744b57d merge: bring the price-formatting hotfix from main into early access
+| |\| 
+| * |   c08178f merge: combine student promo (dana/promo) with early access
+| |\ \  
+| | * | d4b1e35 (origin/dana/promo) test: add student discount tests
+| | * | 0841085 feat: student discount (15%)
+| * | | 390b44f test(pricing): cover member discount, caps and invalid quantities
+| * | | 1a84318 feat(pricing): 20% member discount on ticket price with 4-ticket cap
+| |/ /  
+* | |   884dbf4 merge: untrack the payment API key config into main
+|\ \ \  
+| * | | 46594cc (origin/miri-jaffe/security/untrack-api-key, security/untrack-api-key) security: stop tracking js/config.js which held the payment API key
+|/ / /  
+* | / 8dee16d fix: correct concert date in events.js
+| |/  
+|/|   
+* | c20c0ba (origin/miri-jaffe/hotfix/price, hotfix/price) Revert "perf: faster price formatting"
+|/  
+| * fe1989c (origin/miri-jaffe/review/noa-refund, review/noa-refund) review: noa/refund is not ready to merge - refund formula includes the service fee
+| * f7e8785 (origin/noa/refund) test: refund tests
+| * 61bfedd feat: refund calculation for cancelled orders
+|/  
+| * fee9f58 (origin/ruth/fixes) wip: try new fonts
+| * 72063d7 debug: dump state to console
+| * 20cd6a9 WIP: try removing ticket limits
+| * 8284d98 fix: correct concert date in events.js
+| * 339324e WIP: new checkout flow (do not merge)
+|/  
+* 6e5b25d (origin/main, origin/HEAD) feat: friendlier message for empty quantity
+* 9119fe2 fix: typo in hero heading
+* a61f4ad feat: add footer with links
+* 73924c4 perf: faster price formatting
+* 03bd4dd docs: update artist lineup text
+* c44fbf8 feat: add early-access promo banner
+* 62f48b5 (tag: v1.0) feat: purchase page UI
+* f4c58bc feat: payment provider config
+* 2cc7e97 feat: event details data
+* 8a944f6 feat: ticket price calculation with tests
+* ed1b1e9 Initial commit: project skeleton and exercise tooling
